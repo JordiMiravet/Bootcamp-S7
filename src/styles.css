@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
+
+:root {
+    /* Colors */
+    --color-black: #000;
+    --color-white: #fff;
+
+    /* Typography */
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5rem;
+    --font-size-base: 2rem;
+    --font-family: Arial, Helvetica, sans-serif;
+    
+
+    /* Spacing fixed */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 2.5rem;
+
+    /* Spacing relative */
+    --width-100p: 100%;
+    --width-90p: 90%;
+}
+
+/* Generals */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+h1, h2, h3, h4, a {
+    margin: 0;
+}
+h1 { font-size: var(--font-size-h1) }
+h2 { font-size: var(--font-size-h2) }
+h3 { font-size: var(--font-size-h3) }
+h4 { font-size: var(--font-size-h4) }
+
+a {
+    font-size: var(--font-size-base);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,24 @@
+:host {
+    height: 10vh;
+    background-color: var(--color-black);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__nav {
+    width: var(--width-90p);
+    margin: 0 auto;
+}
+.header__nav-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-xl);
+}
+.header__nav-detail {
+    margin: 0;
+}
+.header__nav-detail a {
+    color: var(--color-white);
+    margin: 0;
+}
