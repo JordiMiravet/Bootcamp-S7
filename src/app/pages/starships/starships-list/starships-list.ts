@@ -1,36 +1,20 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { StarshipsService } from '../../../core/services/starships';
+import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'app-starships-list',
+  selector: 'section[starships-list]',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './starships-list.html',
   styleUrls: ['./starships-list.css'],
 })
 export class StarshipsListComponent implements OnInit {
 
-  starshipList = signal<any[]>([]);
-
   constructor(public starships: StarshipsService){}
 
   ngOnInit(): void {
-    this.getStarShips();
-  }
-
-  getStarShips(){
-    this.starships.getStarShips().subscribe({
-      next: (data) => {
-        this.starshipList.set(data.results);
-
-        console.log(data)
-        console.log(this.starshipList())
-      }, 
-      error: (e) => {
-        console.error(e);
-      }
-    })
+    this.starships.getStarShips();
   }
 }
