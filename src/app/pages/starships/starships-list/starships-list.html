@@ -1,1 +1,9 @@
-<p>starships-list works!</p>
+<h2>Starships</h2>
+<ul>
+    @for(starship of starshipList(); track $index){
+        <li>
+            <h3>{{ starship.name }}</h3>
+            <h3>{{ starship.model }}</h3>
+        </li>
+    }
+</ul>
