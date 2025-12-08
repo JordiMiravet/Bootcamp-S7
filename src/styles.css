@@ -3,7 +3,8 @@
 :root {
     /* Colors */
     --color-black: #000;
-    --color-grey-hard: #262626;
+    --color-grey-hard: #272727;
+    --color-grey-light: #aaaaaa;
     --color-white: #fff;
 
     /* Typography */
@@ -12,7 +13,7 @@
     --font-size-h3: 1.75rem;
     --font-size-h4: 1.5rem;
     --font-size-base: 2rem;
-    --font-family: Arial, Helvetica, sans-serif;
+    --font-family: monospace;
     
     /* Spacing fixed */
     --spacing-xs: 0.5rem;
@@ -20,10 +21,18 @@
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 2.5rem;
+    --spacing-section: 3.5rem;
 
     /* Spacing relative */
     --width-100p: 100%;
     --width-90p: 90%;
+    --width-85p: 85%;
+    --width-80p: 80%;
+    --width-75p: 75%;
+
+    /* Border radius */
+    --radius-xs: 0.5rem;
+    --radius-md: 1rem;
 }
 
 /* Generals */
@@ -38,8 +47,16 @@ html {
 body {
     margin: 0;
     padding: 0;
+    
     font-family: var(--font-family);
-    background-color: var(--color-grey-hard);
+    background-color: var(--color-black);
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
 
 h1, h2, h3, h4, a {

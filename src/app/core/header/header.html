@@ -1,6 +1,18 @@
+<div class="header__logo">
+    <img class="header__logo-img" src="/assets/images/starwars_logo.svg" alt="starwars logo">
+</div>
 <nav class="header__nav">
     <ul class="header__nav-list">
-        <li class="header__nav-detail"><a [routerLink]="['/']">Home</a></li>
-        <li class="header__nav-detail"><a [routerLink]="['/starships']">StarShips</a></li>
+        <li class="header__nav-detail"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+        >
+            <a [routerLink]="['/']">Home</a>
+        </li>
+        <li class="header__nav-detail"
+            routerLinkActive="active-link"
+        >
+            <a [routerLink]="['/starships']">StarShips</a>
+        </li>
     </ul>
 </nav>
