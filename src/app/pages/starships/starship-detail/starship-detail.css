@@ -3,7 +3,7 @@
 }
 .starship-header {
     width: var( --width-90p);
-    margin: var(--spacing-xl) auto;
+    margin: var(--spacing-xl) auto 0 auto;
     padding: var(--spacing-sm);
     border-width: 2px 0;
     border-style: solid;
@@ -24,7 +24,7 @@
     grid-template-columns: 1fr;
     width: var( --width-90p);
     margin: 0 auto;
-    padding: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
 }
 .starship__image {
     width: var(--width-100p);

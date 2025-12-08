@@ -16,6 +16,7 @@
     padding: var(--spacing-lg);
     border-radius: 0 var(--radius-xs) var(--radius-xs) 0 ;
     border-left: 2px solid var(--color-red-hard);
+    cursor: pointer;
 }
 
 .starship__detail h2 {
