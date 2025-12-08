@@ -54,6 +54,7 @@
 .starship__text-details h3 {
     font-size: var(--spacing-md);
 }
+
 @media(min-width: 768px) {
     .starship {
         grid-template-columns: 2fr 3fr;

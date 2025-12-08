@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StarshipsService } from '../../../core/services/starships';
+import { StarshipModel } from '../../../models/starship';
 
 @Component({
   selector: 'app-starship-detail',
@@ -11,7 +12,7 @@ import { StarshipsService } from '../../../core/services/starships';
 })
 export class StarshipDetailComponent {
 
-  starship?: any;
+  starship?: StarshipModel;
   
   constructor(
     private route: ActivatedRoute, 
@@ -19,7 +20,6 @@ export class StarshipDetailComponent {
   ) {
     const name = route.snapshot.params['starshipName'];
     this.starship = this.starships.getStarShip(name);
-    console.log(this.starship)
   }
   
 }
