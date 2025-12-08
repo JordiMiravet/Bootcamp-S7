@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StarshipsService } from '../../../core/services/starships';
 import { RouterLink } from "@angular/router";

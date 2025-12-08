@@ -2,7 +2,7 @@
     height: auto;
     background-color: var(--color-black);
     margin: 0;
-    padding: var(--spacing-xl) 0 ;
+    padding-top: var(--spacing-md);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@
     border-width: 1px 0;
     border-style: solid;
     border-color: var(--color-grey-light);
-    width: 100%;   
+    width: 100%;  
 }
 .header__nav-list {
     display: flex;
@@ -48,6 +48,6 @@
     background-color: var(--color-grey-light);
 }
 .active-link a {
-  color: var(--color-black);
-  font-weight: bold;
+    color: var(--color-black);
+    font-weight: bold;
 }

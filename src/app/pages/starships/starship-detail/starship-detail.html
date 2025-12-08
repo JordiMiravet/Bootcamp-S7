@@ -1,5 +1,28 @@
-@if (starship){
-    <h2>{{ starship.name }}</h2>
+
+<div class="starship-header">
+    <h2>STARSHIP</h2>
+</div>
+<img class="starship-background" src="/assets/images/background_deathStar.webp" alt="Starship background">
+
+@if (starship) {
+    <section class="starship">
+        <div class="starship__image">
+            <img src="" alt="">
+        </div>
+        <div class="starship__text">
+            <h2>{{ starship.name }}</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magnam perspiciatis, culpa quam saepe distinctio laudantium dignissimos amet incidunt provident aperiam ipsum sapiente praesentium unde explicabo aspernatur, reprehenderit tempore dolorum?</p>
+            <div class="starship__text-details">
+                <h3>Model: {{ starship.model }}</h3>
+                <h3>Manufacturer: {{ starship.manufacturer }} </h3>
+                <h3>Class: {{ starship.starship_class }}</h3>
+                <h3>Cost in credits: {{ starship.cost_in_credits }}</h3>
+                <h3>Atmospheric Speed:{{ starship.max_atmosphering_speed }}</h3>
+                <h3>Length: {{ starship.length }}</h3>
+                <h3>Crew: {{ starship.crew }}</h3>
+            </div>
+        </div>
+    </section>
 } @else {
-    <h2>No existe ninguna nave con ese nombre</h2>
+    <h2>This Starship doesn't exist</h2>
 }

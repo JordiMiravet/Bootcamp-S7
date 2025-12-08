@@ -6,6 +6,7 @@
     --color-grey-hard: #272727;
     --color-grey-light: #aaaaaa;
     --color-white: #fff;
+    --color-red-hard: #550000;
 
     /* Typography */
     --font-size-h1: 2.5rem;
@@ -21,6 +22,7 @@
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 2.5rem;
+    --spacing-xxl: 3rem;
     --spacing-section: 3.5rem;
 
     /* Spacing relative */
@@ -59,7 +61,7 @@ body::-webkit-scrollbar {
     background: transparent;
 }
 
-h1, h2, h3, h4, a {
+h1, h2, h3, h4, p, a {
     margin: 0;
 }
 h1 { font-size: var(--font-size-h1) }
@@ -67,6 +69,7 @@ h2 { font-size: var(--font-size-h2) }
 h3 { font-size: var(--font-size-h3) }
 h4 { font-size: var(--font-size-h4) }
 
+p { font-size: var(--font-size-h4) }
 a {
     font-size: var(--font-size-base);
     text-decoration: none;

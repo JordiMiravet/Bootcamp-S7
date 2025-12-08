@@ -1,3 +1,70 @@
 :host {
-    color: var(--color-white);
+    color: var(--color-grey-light);
+}
+.starship-header {
+    width: var( --width-90p);
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-sm);
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: var(--color-grey-hard);
+}
+.starship-background {
+    position: fixed;
+    top: 15vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.starship {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: var( --width-90p);
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+.starship__image {
+    width: var(--width-100p);
+    min-width: 25rem;
+    min-height: 25rem;
+}
+
+.starship__text {
+    background-color: var(--color-grey-hard);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    border-top: 2px solid var(--color-red-hard);
+    border-radius: 0  0 var(--radius-xs) var(--radius-xs) ;
+}
+.starship__text h2 {
+    text-transform: uppercase;
+}
+.starship__text p {
+    font-size: 1.25rem ;
+    line-height: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+.starship__text-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sx);
+}
+.starship__text-details h3 {
+    font-size: var(--spacing-md);
+}
+@media(min-width: 768px) {
+    .starship {
+        grid-template-columns: 2fr 3fr;
+    }
+    .starship__text {
+        border-left: 2px solid var(--color-red-hard);
+        border-top: none;
+        border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+    }
+    .starship__text-details {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
 }

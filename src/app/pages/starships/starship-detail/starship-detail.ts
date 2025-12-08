@@ -10,8 +10,9 @@ import { StarshipsService } from '../../../core/services/starships';
   styleUrl: './starship-detail.css',
 })
 export class StarshipDetailComponent {
-  
+
   starship?: any;
+  
   constructor(
     private route: ActivatedRoute, 
     private starships: StarshipsService

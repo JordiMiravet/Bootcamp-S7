@@ -6,14 +6,16 @@
 }
 
 .starship__list {
-    width: var(--width-75p);
+    width: var(--width-90p);
+    margin-top: var(--spacing-lg);
 }
 
 .starship__detail {
     background-color: var(--color-grey-hard);
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-lg);
-    border-radius: var(--radius-xs);
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0 ;
+    border-left: 2px solid var(--color-red-hard);
 }
 
 .starship__detail h2 {
@@ -23,4 +25,10 @@
 
 .starship__detail h3 {
     color: var(--color-grey-light); 
+}
+
+@media(min-width:768px){
+    .starship__list {
+        width: var(--width-75p);
+    }
 }
