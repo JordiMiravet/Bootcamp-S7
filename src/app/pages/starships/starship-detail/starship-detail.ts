@@ -18,8 +18,8 @@ export class StarshipDetailComponent {
     private route: ActivatedRoute, 
     private starships: StarshipsService
   ) {
+    console.log(starships)
     const name = route.snapshot.params['starshipName'];
     this.starship = this.starships.getStarShip(name);
   }
-  
 }

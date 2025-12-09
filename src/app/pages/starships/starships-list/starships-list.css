@@ -1,13 +1,14 @@
 :host {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: var(--width-100p);
     margin: 0 auto;
 }
 
 .starship__list {
     width: var(--width-90p);
-    margin-top: var(--spacing-lg);
+    margin: var(--spacing-lg) auto 0 auto
 }
 
 .starship__detail {
@@ -18,14 +19,16 @@
     border-left: 2px solid var(--color-red-hard);
     cursor: pointer;
 }
-
 .starship__detail h2 {
     text-transform: uppercase;
     color: var(--color-grey-light);
 }
-
 .starship__detail h3 {
     color: var(--color-grey-light); 
+}
+
+.endPoint {
+    height: 1rem;
 }
 
 @media(min-width:768px){

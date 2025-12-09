@@ -30,6 +30,15 @@
     width: var(--width-100p);
     min-width: 25rem;
     min-height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.starship__image img {
+    width: var(--width-100p);
+    height: var(--width-100p);
+    object-fit: cover;
 }
 
 .starship__text {
