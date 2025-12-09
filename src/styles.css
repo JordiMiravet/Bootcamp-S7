@@ -73,6 +73,7 @@ p { font-size: var(--font-size-h4) }
 a {
     font-size: var(--font-size-base);
     text-decoration: none;
+    color: var(--color-grey-light);
 }
 
 ul {

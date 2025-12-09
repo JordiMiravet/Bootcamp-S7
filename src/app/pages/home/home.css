@@ -1,0 +1,37 @@
+:host {
+    display: block;
+    position: relative;
+    width: var(--width-100p);
+    height: 75vh;
+    overflow: hidden;
+}
+
+.starship-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.nav-link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-xs);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nav-icon {
+    width: 15rem;
+    height: 15rem;
+    max-width: 50vw;
+    max-height: 50vh;
+}

@@ -29,7 +29,6 @@ export class StarshipsService {
     })
   }
   
-
   getStarShip(name: string) {
     const url = `${this.STARSHIPS_URL}?search=${name}`;
     return this.http.get<StarshipApiResponse>(url);
