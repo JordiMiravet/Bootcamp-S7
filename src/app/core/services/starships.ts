@@ -7,10 +7,10 @@ import { StarshipApiResponse } from '../../models/starship-api-response';
   providedIn: 'root',
 })
 export class StarshipsService {
-  private readonly STARSHIPS_URL : string = 'https://swapi.dev/api/starships';
+  private readonly STARSHIPS_URL : string = 'https://swapi.dev/api/starships/';
 
   starshipList = signal<StarshipModel[]>([]);
-  nextPage = signal<string | null>('https://swapi.dev/api/starships/');
+  nextPage = signal<string | null>(this.STARSHIPS_URL);
   
   constructor(private http: HttpClient){}
 
@@ -28,9 +28,11 @@ export class StarshipsService {
       }
     })
   }
+  
 
   getStarShip(name: string) {
-    return this.starshipList().find((starship) => starship.name === name)
+    const url = `${this.STARSHIPS_URL}?search=${name}`;
+    return this.http.get<StarshipApiResponse>(url);
   }
   
 }

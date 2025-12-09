@@ -13,13 +13,25 @@ import { StarshipModel } from '../../../models/starship';
 export class StarshipDetailComponent {
 
   starship?: StarshipModel;
+  loading = true;
   
   constructor(
     private route: ActivatedRoute, 
     private starships: StarshipsService
-  ) {
-    console.log(starships)
-    const name = route.snapshot.params['starshipName'];
-    this.starship = this.starships.getStarShip(name);
+  ) {}
+
+  ngOnInit(): void {
+    const name = this.route.snapshot.params['starshipName'];
+    
+    this.starships.getStarShip(name).subscribe({
+      next: (res) => {
+        this.starship = res.results[0];
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.loading = false;
+      }
+    });
   }
 }

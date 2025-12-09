@@ -64,6 +64,13 @@
     font-size: var(--spacing-md);
 }
 
+.starship__message {
+    text-align: center;
+    color: var(--color-grey-light);
+    font-size: var(--font-size-base);
+    margin: var(--spacing-xxl) 0;
+}
+
 @media(min-width: 768px) {
     .starship {
         grid-template-columns: 2fr 3fr;
