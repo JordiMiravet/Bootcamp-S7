@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
-import { StarshipModel } from '../../models/starship';
-import { StarshipApiResponse } from '../../models/starship-api-response';
+import { StarshipModel } from '../../../models/starship';
+import { StarshipApiResponse } from '../../../models/starship-api-response';
 import { map, Observable } from 'rxjs';
 
 @Injectable({

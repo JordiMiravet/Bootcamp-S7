@@ -1,0 +1,21 @@
+:host {
+    color: var(--color-grey-light);
+}
+
+.form-register{
+    background-color: var(--color-grey-hard);
+    padding: var(--spacing-xxl);
+    width: var(--width-90p);
+    margin: 0 auto;
+}
+
+.form-register__fieldset{
+
+}
+.form-register__fieldset label {
+
+}
+.form-register__fieldset input {
+
+}
+

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, AfterViewInit ,ViewChild, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StarshipsService } from '../../../core/services/starships';
+import { StarshipsService } from '../../../core/services/starshipsService/starships';
 import { RouterLink } from "@angular/router";
 
 @Component({

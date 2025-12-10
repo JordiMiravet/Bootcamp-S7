@@ -1,0 +1,11 @@
+<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" class="form-register">
+    <fieldset class="form-register__fieldset">
+        <label for="inputRegisterEmail">Email</label>
+        <input type="email" id="inputRegisterEmail" formControlName="email">
+    </fieldset>
+    <fieldset class="form-register__fieldset">
+        <label for="inputRegisterPassword">Password</label>
+        <input type="password" id="inputRegisterPassword" formControlName="password">
+    </fieldset>
+    <button type="submit" [disabled]="formRegister.invalid">Register</button>
+</form>

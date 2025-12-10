@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StarshipsService } from '../../../core/services/starships';
+import { StarshipsService } from '../../../core/services/starshipsService/starships';
 import { StarshipModel } from '../../../models/starship';
 
 @Component({
