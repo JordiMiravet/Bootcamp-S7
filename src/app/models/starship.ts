@@ -8,4 +8,6 @@ export interface StarshipModel {
     crew: string;
     passengers: string;
     starship_class: string;
+    url: string;
+    id: string;
 }

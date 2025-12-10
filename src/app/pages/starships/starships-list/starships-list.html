@@ -1,10 +1,10 @@
 
 <ul class="starship__list">
     @for(starship of starships.starshipList(); track $index){
-        <li class="starship__detail" [routerLink]="['/starships', starship.name]">
+        <li class="starship__detail" [routerLink]="['/starships', starship.id ]">
             <h2>{{ starship.name }}</h2>
             <h3>{{ starship.model }}</h3>
         </li>
     }
 </ul>
-<div id="endPoint" class="endPoint"></div>
+<div #endPoint class="endPoint"></div>

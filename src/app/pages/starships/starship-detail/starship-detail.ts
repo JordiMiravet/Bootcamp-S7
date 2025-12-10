@@ -21,11 +21,11 @@ export class StarshipDetailComponent {
   ) {}
 
   ngOnInit(): void {
-    const name = this.route.snapshot.params['starshipName'];
+    const id = this.route.snapshot.params['starshipName'];
     
-    this.starships.getStarShip(name).subscribe({
+    this.starships.getStarShip(id).subscribe({
       next: (res) => {
-        this.starship = res.results[0];
+        this.starship = res;
         this.loading = false;
       },
       error: (err) => {
