@@ -5,14 +5,29 @@
     padding-top: var(--spacing-md);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+}
+/* Authenticators */
+
+.header__auth {
+    width: var(--width-95p);
+    display: flex;
+    justify-content: flex-end;
+}
+.header__auth a {
+    font-size: var(--font-size-h4);
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+.header__auth a:hover {
+    background-color: var(--color-white);
+    color: var(--color-grey-hard);
 }
 
 /* Logo */
 
 .header__logo {
     margin: 0;
+    text-align: center;
 }
 .header__logo-img{
     width: 20rem;
