@@ -1,11 +1,27 @@
-<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" class="form-register">
-    <fieldset class="form-register__fieldset">
+<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" class="form">
+    <legend class="form__legend"> Register:</legend>
+    <fieldset class="form__field">
         <label for="inputRegisterEmail">Email</label>
-        <input type="email" id="inputRegisterEmail" formControlName="email">
+        <input 
+            type="email" 
+            id="inputRegisterEmail" 
+            formControlName="email"
+            [class.form__input-error]="formRegister.controls['email'].invalid && formRegister.controls['email'].touched">
+        <h4 class="form__field-error" [hidden]="formRegister.controls['email'].valid || !formRegister.controls['email'].touched">
+            Please enter a valid email
+        </h4>
     </fieldset>
-    <fieldset class="form-register__fieldset">
+    <fieldset class="form__field">
         <label for="inputRegisterPassword">Password</label>
-        <input type="password" id="inputRegisterPassword" formControlName="password">
+        <input 
+            type="password" 
+            id="inputRegisterPassword" 
+            formControlName="password"
+            [class.form__input-error]="formRegister.controls['password'].invalid && formRegister.controls['password'].touched"
+        >
+        <h4 class="form__field-error" [hidden]="formRegister.controls['password'].valid || !formRegister.controls['password'].touched">
+            Please enter a password that contains at least 6 characters
+        </h4>
     </fieldset>
-    <button type="submit" [disabled]="formRegister.invalid">Register</button>
+    <button class="btn-auth" type="submit" [disabled]="!formRegister.valid">Register</button>
 </form>
