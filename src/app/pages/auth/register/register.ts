@@ -38,7 +38,6 @@ export class RegisterComponent {
       .then(res => {
         console.log('Vale esto funciona por fin xD',res),
         this.router.navigate(['/starships']); 
-        // aqui luego pondré el loggin que no me da la vida si no xD
       })
       .catch(error => {
          console.log('Majo sigue intentandolo xD',error)

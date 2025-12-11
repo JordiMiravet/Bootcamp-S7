@@ -3,6 +3,9 @@ import { HomeComponent } from './pages/home/home';
 import { StarshipsListComponent } from './pages/starships/starships-list/starships-list';
 import { StarshipDetailComponent } from './pages/starships/starship-detail/starship-detail';
 import { RegisterComponent } from './pages/auth/register/register';
+import { LoginComponent } from './pages/auth/login/login';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
 
 export const routes: Routes = [
     {
@@ -14,8 +17,13 @@ export const routes: Routes = [
         component: RegisterComponent
     },
     {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
         path: 'starships',
-        component: StarshipsListComponent
+        component: StarshipsListComponent,
+        ...canActivate( () => redirectUnauthorizedTo(['/register']) )
     },
     {
         path: 'starships/:starshipName',

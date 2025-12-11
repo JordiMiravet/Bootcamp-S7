@@ -1,1 +1,28 @@
-<p>login works!</p>
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="form">
+    <legend class="form__legend"> Login:</legend>
+    <fieldset class="form__field">
+        <label for="inputLoginEmail">Email</label>
+        <input 
+            type="email" 
+            id="inputLoginEmail" 
+            formControlName="email"
+            [class.form__input-error]="formLogin.controls['email'].invalid && formLogin.controls['email'].touched">
+        <h4 class="form__field-error" [hidden]="formLogin.controls['email'].valid || !formLogin.controls['email'].touched">
+            Please enter a valid email
+        </h4>
+    </fieldset>
+    <fieldset class="form__field">
+        <label for="inputLoginPassword">Password</label>
+        <input 
+            type="password" 
+            id="inputLoginPassword" 
+            formControlName="password"
+            [class.form__input-error]="formLogin.controls['password'].invalid && formLogin.controls['password'].touched"
+        >
+        <h4 class="form__field-error" [hidden]="formLogin.controls['password'].valid || !formLogin.controls['password'].touched">
+            Please enter a password that contains at least 6 characters
+        </h4>
+    </fieldset>
+    <button class="btn-auth" type="submit" [disabled]="!formLogin.valid">Register</button>
+</form>
+

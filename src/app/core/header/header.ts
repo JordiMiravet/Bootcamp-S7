@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { UserService } from '../services/userService/user-service';
+
 
 @Component({
   selector: 'header[header]',
@@ -9,5 +11,19 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   styleUrls: ['./header.css'],
 })
 export class HeaderComponent {
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
+  ngOnInit(): void {
+
+  }
+  logOut():void {
+    this.userService.logout()
+      .then( () => {
+        this.router.navigate([''])
+      })
+      .catch( error => console.log(error));
+  }
 }

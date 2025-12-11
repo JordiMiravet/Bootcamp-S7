@@ -1,6 +1,7 @@
 <div class="header__auth">
     <a [routerLink]="['/register']">Register</a>
     <a [routerLink]="['/login']">Login</a>
+    <a [routerLink]="['/login']" (click)="logOut()">Logout</a>
 </div>
 
 <a class="header__logo" [routerLink]="['/']">
