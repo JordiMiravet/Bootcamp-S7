@@ -27,7 +27,8 @@ export const routes: Routes = [
     },
     {
         path: 'starships/:starshipName',
-        component: StarshipDetailComponent
+        component: StarshipDetailComponent,
+        ...canActivate( () => redirectUnauthorizedTo(['']) )
     },
     {
         path: '**',

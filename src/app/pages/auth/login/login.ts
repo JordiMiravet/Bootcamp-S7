@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/userService/user-service';
 import { Router } from '@angular/router';
@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.css'],
 })
 export class LoginComponent {
+  
+  private userService = inject(UserService);
+  private router = inject(Router)
 
  formLogin: FormGroup;
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ){
+  constructor(){
     this.formLogin = new FormGroup({
       email: new FormControl('',[ 
         Validators.required, 
@@ -30,17 +30,15 @@ export class LoginComponent {
     })
   }
 
-  ngOnInit(): void {
-  }
-
   onSubmit() {
+    if( this.formLogin.invalid) return;
+
     this.userService.login(this.formLogin.value)
       .then(res => {
-        console.log('Vale esto funciona por fin xD',res),
-        this.router.navigate(['/login']); 
+        this.router.navigate(['/starships']); 
       })
       .catch(error => {
-         console.log('Majo sigue intentandolo xD',error)
+         console.error('Error:',error)
       })
   }
 }

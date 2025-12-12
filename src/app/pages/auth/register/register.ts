@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/userService/user-service';
 import { Router } from '@angular/router';
@@ -11,13 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.css'],
 })
 export class RegisterComponent {
+  private userService = inject(UserService);
+  private router = inject(Router);
 
   formRegister: FormGroup;
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ){
+  constructor(){
     this.formRegister = new FormGroup({
       email: new FormControl('',[ 
         Validators.required, 
@@ -27,20 +26,16 @@ export class RegisterComponent {
         Validators.required,
         Validators.minLength(6)
       ])
-    })
-  }
-
-  ngOnInit(): void {
+    });
   }
 
   onSubmit() {
     this.userService.register(this.formRegister.value)
       .then(res => {
-        console.log('Vale esto funciona por fin xD',res),
         this.router.navigate(['/starships']); 
       })
       .catch(error => {
-         console.log('Majo sigue intentandolo xD',error)
+         console.error('Error:',error)
       })
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { UserService } from '../services/userService/user-service';
 
@@ -11,19 +11,18 @@ import { UserService } from '../services/userService/user-service';
   styleUrls: ['./header.css'],
 })
 export class HeaderComponent {
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) { }
+  private userService = inject(UserService);
+  private router =  inject(Router);
 
-  ngOnInit(): void {
+  public isLogged : WritableSignal<boolean> = this.userService.isLogged;
 
-  }
-  logOut():void {
+  logOut(): void {
     this.userService.logout()
       .then( () => {
         this.router.navigate([''])
       })
-      .catch( error => console.log(error));
+      .catch( error => {
+        console.error('Error:', error);
+      });
   }
 }
