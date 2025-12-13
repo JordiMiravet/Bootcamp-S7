@@ -1,3 +1,5 @@
+import { Pilot } from "./starship-pilot.model";
+
 export interface StarshipModel {
     name: string;
     model: string;
@@ -10,4 +12,5 @@ export interface StarshipModel {
     starship_class: string;
     url: string;
     id: string;
+    pilots: Pilot[];
 }

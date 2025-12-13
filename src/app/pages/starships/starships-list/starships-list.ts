@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, AfterViewInit ,ViewChild, viewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit ,ViewChild, viewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StarshipsService } from '../../../core/services/starshipsService/starships';
 import { RouterLink } from "@angular/router";
@@ -13,9 +13,9 @@ import { RouterLink } from "@angular/router";
 export class StarshipsListComponent implements OnInit, AfterViewInit {
 
   @ViewChild('endPoint') endPoint!: ElementRef;
-  private observer!: IntersectionObserver;
   
-  constructor(public starships: StarshipsService){}
+  private observer!: IntersectionObserver;
+  public starships = inject(StarshipsService)
 
   ngOnInit(): void {
     this.starships.getAllPages();

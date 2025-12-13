@@ -1,19 +1,19 @@
-
-<div class="starship-header">
-    <h2>STARSHIP</h2>
-</div>
 <img class="background-image" src="/assets/images/background_deathStar.webp" alt="Starship background">
+
 @if (loading) {
     <h2 class="starship__message">Loading starship...</h2>
 } @else if (starship) {
+    <div class="section-text">
+        <h2>STARSHIP</h2>
+    </div>
     <section class="starship">
         <div class="starship__image">
             <img src="/assets/images/millenium-falcon_001.jpg" alt="Hola si">
         </div>
-        <div class="starship__text">
+        <div class="starship__info">
             <h2>{{ starship.name }}</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magnam perspiciatis, culpa quam saepe distinctio laudantium dignissimos amet incidunt provident aperiam ipsum sapiente praesentium unde explicabo aspernatur, reprehenderit tempore dolorum?</p>
-            <div class="starship__text-details">
+            <div class="starship__info-details">
                 <h3>Model: {{ starship.model }}</h3>
                 <h3>Manufacturer: {{ starship.manufacturer }} </h3>
                 <h3>Class: {{ starship.starship_class }}</h3>
@@ -24,6 +24,20 @@
             </div>
         </div>
     </section>
+    
+    @if(starship.pilots.length > 0){
+        <div class="section-text">
+            <h2>Pilots</h2>
+        </div>
+        <section class="pilots">
+            @for(pilot of starship.pilots; track $index){
+                <div class="pilots__text">
+                    <h3>{{ pilot.name }}</h3>
+                </div>
+            }
+        </section>
+    }
+
 } @else {
     <h2 class="starship__message">This Starship doesn't exist</h2>
 }

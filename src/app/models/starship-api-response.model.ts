@@ -1,4 +1,4 @@
-import { StarshipModel } from "./starship";
+import { StarshipModel } from "./starship.model";
 
 export interface StarshipApiResponse {
     count: number;

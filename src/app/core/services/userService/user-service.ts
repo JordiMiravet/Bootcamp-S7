@@ -14,7 +14,7 @@ export class UserService {
   constructor() {
     onAuthStateChanged(this.auth, (user: User | null) => {
       this.isLogged.set(!!user)
-    })
+    });
   }
 
   register({ email, password }: any) {

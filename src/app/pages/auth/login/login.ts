@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.css'],
 })
 export class LoginComponent {
-  
+
   private userService = inject(UserService);
   private router = inject(Router)
 
- formLogin: FormGroup;
+  formLogin: FormGroup;
 
   constructor(){
     this.formLogin = new FormGroup({
@@ -38,7 +38,7 @@ export class LoginComponent {
         this.router.navigate(['/starships']); 
       })
       .catch(error => {
-         console.error('Error:',error)
+         console.error('Error:',error);
       })
   }
 }

@@ -1,7 +1,7 @@
 :host {
     color: var(--color-grey-light);
 }
-.starship-header {
+.section-text {
     width: var( --width-90p);
     margin: var(--spacing-xl) auto 0 auto;
     padding: var(--spacing-sm);
@@ -42,26 +42,26 @@
     object-fit: cover;
 }
 
-.starship__text {
+.starship__info {
     background-color: var(--color-grey-hard);
     padding: var(--spacing-xxl) var(--spacing-xl);
     border-top: 2px solid var(--color-red-hard);
     border-radius: 0  0 var(--radius-xs) var(--radius-xs) ;
 }
-.starship__text h2 {
+.starship__info h2 {
     text-transform: uppercase;
 }
-.starship__text p {
+.starship__info p {
     font-size: 1.25rem ;
     line-height: var(--spacing-md);
     margin: var(--spacing-md) 0;
 }
-.starship__text-details {
+.starship__info-details {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-sx);
 }
-.starship__text-details h3 {
+.starship__info-details h3 {
     font-size: var(--spacing-md);
 }
 
@@ -84,5 +84,34 @@
     .starship__text-details {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-sm);
+    }
+}
+/* Pilot section */
+
+.pilots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) auto 0 auto;
+    width: var(--width-90p);
+}
+.pilots__text{
+    background-color: var(--color-grey-hard);
+
+    padding: var(--spacing-md);
+    border-left: 2px solid var(--color-red-hard);
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pilots__text h3 {
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+    .pilots {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
