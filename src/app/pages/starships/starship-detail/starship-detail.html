@@ -26,6 +26,7 @@
             </div>
         </div>
     </section>
+
     @if(starship.pilots.length){
         <div class="section-text">
             <h2>Pilots</h2>
@@ -40,14 +41,10 @@
         <div class="section-text">
             <h2>Films</h2>
         </div>
-        <section class="films">
-            @for(film of starship.films; track $index){
-                <div class="films__text">
-                    <h3>Episode {{ film.episode_id }}</h3>
-                    <h3>{{ film.title }}</h3>
-                </div>
-            }
-        </section>
+        <section
+            starship-films
+            [films]="starship.films"
+        ></section>
     }
 
 } @else {

@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { StarshipsService } from '../../../core/services/starshipsService/starships';
 import { StarshipModel } from '../../../models/starship.model';
 import { StarshipPilotsComponent } from '../starship-pilots/starship-pilots';
+import { StarshipFilmsComponent } from '../starship-films/starship-films';
 
 @Component({
   selector: 'app-starship-detail',
   standalone: true,
-  imports: [StarshipPilotsComponent],
+  imports: [StarshipPilotsComponent, StarshipFilmsComponent],
   templateUrl: './starship-detail.html',
   styleUrl: './starship-detail.css',
 })

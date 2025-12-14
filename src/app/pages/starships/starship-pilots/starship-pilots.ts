@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { StarshipsService } from '../../../core/services/starshipsService/starships';
 import { Pilot } from '../../../models/starship-pilot.model';
 
 @Component({
