@@ -26,19 +26,16 @@
             </div>
         </div>
     </section>
-    
     @if(starship.pilots.length){
         <div class="section-text">
             <h2>Pilots</h2>
         </div>
-        <section class="pilots">
-            @for(pilot of starship.pilots; track $index){
-                <div class="pilots__text">
-                    <h3>{{ pilot.name }}</h3>
-                </div>
-            }
-        </section>
+        <section 
+            starship-pilots
+            [pilots]="starship.pilots"
+        ></section>
     }
+   
     @if(starship.films.length){
         <div class="section-text">
             <h2>Films</h2>
