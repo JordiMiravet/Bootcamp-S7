@@ -3,9 +3,11 @@
 @if (loading) {
     <h2 class="starship__message">Loading starship...</h2>
 } @else if (starship) {
+
     <div class="section-text">
         <h2>STARSHIP</h2>
     </div>
+    
     <section class="starship">
         <div class="starship__image">
             <img src="/assets/images/millenium-falcon_001.jpg" alt="Hola si">
@@ -25,7 +27,7 @@
         </div>
     </section>
     
-    @if(starship.pilots.length > 0){
+    @if(starship.pilots.length){
         <div class="section-text">
             <h2>Pilots</h2>
         </div>
@@ -33,6 +35,19 @@
             @for(pilot of starship.pilots; track $index){
                 <div class="pilots__text">
                     <h3>{{ pilot.name }}</h3>
+                </div>
+            }
+        </section>
+    }
+    @if(starship.films.length){
+        <div class="section-text">
+            <h2>Films</h2>
+        </div>
+        <section class="films">
+            @for(film of starship.films; track $index){
+                <div class="films__text">
+                    <h3>Episode {{ film.episode_id }}</h3>
+                    <h3>{{ film.title }}</h3>
                 </div>
             }
         </section>

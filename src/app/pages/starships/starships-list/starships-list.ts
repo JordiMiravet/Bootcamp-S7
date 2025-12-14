@@ -10,6 +10,7 @@ import { RouterLink } from "@angular/router";
   templateUrl: './starships-list.html',
   styleUrls: ['./starships-list.css'],
 })
+
 export class StarshipsListComponent implements OnInit, AfterViewInit {
 
   @ViewChild('endPoint') endPoint!: ElementRef;

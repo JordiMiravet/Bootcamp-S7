@@ -13,4 +13,5 @@ export interface StarshipModel {
     url: string;
     id: string;
     pilots: Pilot[];
+    films: any[];
 }

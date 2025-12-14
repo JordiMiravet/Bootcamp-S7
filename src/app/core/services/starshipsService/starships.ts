@@ -3,6 +3,8 @@ import { inject, Injectable, signal } from '@angular/core';
 import { StarshipModel } from '../../../models/starship.model';
 import { StarshipApiResponse } from '../../../models/starship-api-response.model';
 import { forkJoin, map, mergeAll, Observable, of, switchMap } from 'rxjs';
+import { Pilot } from '../../../models/starship-pilot.model';
+import { Film } from '../../../models/starship-film.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +23,7 @@ export class StarshipsService {
     if (!url) return;
 
     this.http
-      .get<StarshipApiResponse>(url)
-      .pipe(
+      .get<StarshipApiResponse>(url).pipe(
         map((res) => {
           res.results = res.results.map((starshipInfo) => ({
             ...starshipInfo,
@@ -43,30 +44,34 @@ export class StarshipsService {
   getStarShip(id: string): Observable<StarshipModel> {
     const url = `${this.STARSHIPS_URL}${id}/`;
 
-    return this.http.get<any>(url)
-      .pipe(
-        map(starship => {
-          const pilotRequests = starship.pilots.map((pilotUrl: string) =>
-            this.http.get<{ name: string }>(pilotUrl)
-          );
+    return this.http.get<any>(url).pipe(
 
-          return {
-            starship,
-            pilotRequests
-          };
-        }),
-        switchMap(({ starship, pilotRequests }) =>
-          pilotRequests.length
-            ? forkJoin(pilotRequests).pipe(
-                map(pilots => ({
-                  ...starship,
-                  pilots
-                }))
-              )
-            : of({ ...starship, pilots: [] })
-        )
-      );
+      switchMap(starship => {
+        const pilotRequests = starship.pilots.map((pilotUrl: string) =>
+          this.http.get<Pilot>(pilotUrl)
+        );
+
+        return pilotRequests.length
+          ? forkJoin(pilotRequests).pipe(
+              map(pilots => ({ ...starship, pilots }))
+            )
+          : of({ ...starship, pilots: [] });
+      }),
+
+      switchMap(starship => {
+        const filmRequests = starship.films.map((filmUrl: string) =>
+          this.http.get<Film>(filmUrl)
+        );
+
+        return filmRequests.length
+          ? forkJoin(filmRequests).pipe(
+              map(films => ({ ...starship, films }))
+            )
+          : of({ ...starship, films: [] });
+      })
+    );
   }
+
 
   getIdfromUrl(url: string): string {
     return url.split('/').filter(Boolean).pop()!;
