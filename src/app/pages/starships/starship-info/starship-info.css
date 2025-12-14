@@ -1,0 +1,59 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: var( --width-90p);
+    margin: 0 auto;
+    padding-top: var(--spacing-xl);
+}
+.starship__image {
+    width: var(--width-100p);
+    min-width: 25rem;
+    min-height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.starship__image img {
+    width: var(--width-100p);
+    height: var(--width-100p);
+    object-fit: cover;
+}
+
+.starship__info {
+    background-color: var(--color-grey-hard);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    border-top: 2px solid var(--color-red-hard);
+    border-radius: 0  0 var(--radius-xs) var(--radius-xs) ;
+}
+.starship__info h2 {
+    text-transform: uppercase;
+}
+.starship__info p {
+    font-size: 1.25rem ;
+    line-height: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+.starship__info-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sx);
+}
+.starship__info-details h3 {
+    font-size: var(--spacing-md);
+}
+
+@media(min-width: 768px) {
+    :host {
+        grid-template-columns: 2fr 3fr;
+    }
+    .starship__info {
+        border-left: 2px solid var(--color-red-hard);
+        border-top: none;
+        border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+    }
+    .starship__info-details {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+}

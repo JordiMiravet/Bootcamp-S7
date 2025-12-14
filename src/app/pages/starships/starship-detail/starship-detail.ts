@@ -4,11 +4,12 @@ import { StarshipsService } from '../../../core/services/starshipsService/starsh
 import { StarshipModel } from '../../../models/starship.model';
 import { StarshipPilotsComponent } from '../starship-pilots/starship-pilots';
 import { StarshipFilmsComponent } from '../starship-films/starship-films';
+import { StarshipInfoComponent } from '../starship-info/starship-info';
 
 @Component({
   selector: 'app-starship-detail',
   standalone: true,
-  imports: [StarshipPilotsComponent, StarshipFilmsComponent],
+  imports: [StarshipPilotsComponent, StarshipFilmsComponent, StarshipInfoComponent],
   templateUrl: './starship-detail.html',
   styleUrl: './starship-detail.css',
 })
