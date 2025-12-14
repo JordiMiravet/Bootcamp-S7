@@ -1,3 +1,4 @@
+import { Film } from "./starship-film.model";
 import { Pilot } from "./starship-pilot.model";
 
 export interface StarshipModel {
@@ -13,5 +14,5 @@ export interface StarshipModel {
     url: string;
     id: string;
     pilots: Pilot[];
-    films: any[];
+    films: Film[];
 }

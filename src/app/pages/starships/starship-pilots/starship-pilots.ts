@@ -10,6 +10,6 @@ import { Pilot } from '../../../models/starship-pilot.model';
 })
 export class StarshipPilotsComponent {
 
-  pilots = input.required<Pilot[]>();
+  public pilots = input.required<Pilot[]>();
 
 }

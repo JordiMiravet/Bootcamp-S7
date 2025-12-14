@@ -10,6 +10,6 @@ import { Film } from '../../../models/starship-film.model';
 })
 export class StarshipFilmsComponent {
 
-  films = input.required<Film[]>();
+  public films = input.required<Film[]>();
 
 }

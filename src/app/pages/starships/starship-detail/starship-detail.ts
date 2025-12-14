@@ -18,8 +18,8 @@ export class StarshipDetailComponent {
   private route =  inject(ActivatedRoute); 
   private starships =  inject(StarshipsService);
 
-  starship?: StarshipModel;
-  loading = true;
+  public starship?: StarshipModel;
+  public loading = true;
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['starshipName'];

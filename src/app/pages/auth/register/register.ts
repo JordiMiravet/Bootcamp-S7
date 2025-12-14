@@ -20,7 +20,8 @@ export class RegisterComponent {
     this.formRegister = new FormGroup({
       email: new FormControl('',[ 
         Validators.required, 
-        Validators.email
+        Validators.email,
+        Validators.pattern(/^[a-zA-Z0-9._-]+([a-zA-Z0-9_-]+)*@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/)
       ]),
       password: new FormControl('', [
         Validators.required,

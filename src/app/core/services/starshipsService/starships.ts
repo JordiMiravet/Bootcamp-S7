@@ -17,7 +17,6 @@ export class StarshipsService {
   starshipList = signal<StarshipModel[]>([]);
   nextPage = signal<string | null>(this.STARSHIPS_URL);
 
-
   getAllPages() : void {
     const url = this.nextPage();
     if (!url) return;
@@ -39,6 +38,10 @@ export class StarshipsService {
         },
         error: (error) => console.error(error),
       });  
+  }
+
+  getIdfromUrl(url: string): string {
+    return url.split('/').filter(Boolean).pop()!;
   }
 
   getStarShip(id: string): Observable<StarshipModel> {
@@ -72,8 +75,4 @@ export class StarshipsService {
     );
   }
 
-
-  getIdfromUrl(url: string): string {
-    return url.split('/').filter(Boolean).pop()!;
-  }
 }

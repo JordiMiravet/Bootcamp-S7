@@ -10,6 +10,6 @@ import { StarshipModel } from '../../../models/starship.model';
 })
 export class StarshipInfoComponent {
 
-  starship = input.required<StarshipModel>();
+  public starship = input.required<StarshipModel>();
 
 }
