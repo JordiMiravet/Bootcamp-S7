@@ -1,7 +1,7 @@
 
-<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" class="form">
+<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" class="form" aria-labelledby="register-legend" novalidate>
 
-    <legend class="form__legend">Register:</legend>
+    <legend class="form__legend" id="register-legend">Register:</legend>
 
     <fieldset class="form__field">
         <label for="inputRegisterEmail">Email</label>
@@ -10,8 +10,15 @@
             id="inputRegisterEmail" 
             formControlName="email"
             [class.form__input-error]="formRegister.controls['email'].invalid && formRegister.controls['email'].touched"
+            aria-required="true"
+            [attr.aria-invalid]="formRegister.controls['email'].invalid && formRegister.controls['email'].touched"
+            aria-describedby="register-email-error"
         >
-        <h4 class="form__field-error-text" [hidden]="formRegister.controls['email'].valid || !formRegister.controls['email'].touched">
+        <h4 
+            class="form__field-error-text" 
+            [hidden]="formRegister.controls['email'].valid || !formRegister.controls['email'].touched" 
+            id="register-email-error"
+        >
             {{ message.invalidEmail }}
         </h4>
     </fieldset>
@@ -23,17 +30,24 @@
             id="inputRegisterPassword" 
             formControlName="password"
             [class.form__input-error]="formRegister.controls['password'].invalid && formRegister.controls['password'].touched"
+            aria-required="true"
+            [attr.aria-invalid]="formRegister.controls['password'].invalid && formRegister.controls['password'].touched"
+            aria-describedby="register-password-error"
         >
-        <h4 class="form__field-error-text" [hidden]="formRegister.controls['password'].valid || !formRegister.controls['password'].touched">
+        <h4 
+            class="form__field-error-text" 
+            [hidden]="formRegister.controls['password'].valid || !formRegister.controls['password'].touched"
+            id="register-password-error"
+        >
             {{ message.invalidPassword }}
         </h4>
         
     </fieldset>
 
-    <button class="btn-auth" type="submit" [disabled]="!formRegister.valid">Login</button>
+    <button class="btn-auth" type="submit" [disabled]="!formRegister.valid" aria-disabled="{{!formRegister.valid}}">Login</button>
 
     @if(errorInfo){
-        <div class="form__field-error-box">
+        <div class="form__field-error-box" role="alert">
             <h4 class="form__field-error-text">{{ errorInfo }}</h4>
         </div>
     }

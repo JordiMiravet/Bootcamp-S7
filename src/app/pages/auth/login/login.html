@@ -1,7 +1,7 @@
 
-<form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="form">
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="form" aria-labelledby="login-legend" novalidate>
 
-    <legend class="form__legend">Login:</legend>
+    <legend class="form__legend" id="login-legend">Login:</legend>
 
     <fieldset class="form__field">
         <label for="inputLoginEmail">Email</label>
@@ -10,8 +10,15 @@
             id="inputLoginEmail" 
             formControlName="email"
             [class.form__input-error]="formLogin.controls['email'].invalid && formLogin.controls['email'].touched"
+            aria-required="true"
+            [attr.aria-invalid]="formLogin.controls['email'].invalid && formLogin.controls['email'].touched"
+            aria-describedby="email-error"
         >
-        <h4 class="form__field-error-text" [hidden]="formLogin.controls['email'].valid || !formLogin.controls['email'].touched">
+        <h4 
+            class="form__field-error-text" 
+            [hidden]="formLogin.controls['email'].valid || !formLogin.controls['email'].touched" 
+            id="email-error"
+        >
             {{ message.invalidEmail }}
         </h4>
     </fieldset>
@@ -23,18 +30,25 @@
             id="inputLoginPassword" 
             formControlName="password"
             [class.form__input-error]="formLogin.controls['password'].invalid && formLogin.controls['password'].touched"
+            aria-required="true"
+            [attr.aria-invalid]="formLogin.controls['password'].invalid && formLogin.controls['password'].touched"
+            aria-describedby="password-error"
         >
-        <h4 class="form__field-error-text" [hidden]="formLogin.controls['password'].valid || !formLogin.controls['password'].touched">
+        <h4 
+            class="form__field-error-text" 
+            [hidden]="formLogin.controls['password'].valid || !formLogin.controls['password'].touched"
+            id="password-error"
+        >
             {{ message.invalidPassword }}
         </h4>
         
     </fieldset>
 
-    <button class="btn-auth" type="submit" [disabled]="!formLogin.valid">Login</button>
+    <button class="btn-auth" type="submit" [disabled]="!formLogin.valid" aria-disabled="{{!formLogin.valid}}">Login</button>
 
     @if(errorSubmit){
-        <div class="form__field-error-box">
-            <h4 class="form__field-error-text">{{errorSubmit}}</h4>
+        <div class="form__field-error-box" role="alert">
+            <h4 class="form__field-error-text">{{ errorSubmit }}</h4>
         </div>
     }
 </form>

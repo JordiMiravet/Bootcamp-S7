@@ -1,24 +1,26 @@
-<div class="header__auth">
+<div class="header__auth" role="navigation" aria-label="User authentication">
     @if(this.isLogged()){
-        <a [routerLink]="['/login']" (click)="logOut()">Logout</a>
+        <a [routerLink]="['']" (click)="logOut()" aria-label="Logout">Logout</a>
     } @else if (!this.isLogged()) {
-        <a [routerLink]="['/register']">Register</a>
-        <a [routerLink]="['/login']">Login</a>
+        <a [routerLink]="['/register']" aria-label="Register account">Register</a>
+        <a [routerLink]="['/login']" aria-label="Login account">Login</a>
     }   
 </div>
 
-<a class="header__logo" [routerLink]="['/']">
-    <img  class="header__logo-img" src="/assets/images/starwars_logo.svg" alt="starwars logo">
+<a class="header__logo" [routerLink]="['/']" aria-label="Go to homepage">
+    <img  class="header__logo-img" src="/assets/images/starwars_logo.svg" alt="starWars logo">
 </a>
-<nav class="header__nav">
+<nav class="header__nav" role="navigation" aria-label="Main menu">
     <ul class="header__nav-list">
-        <li class="header__nav-detail"
+        <li 
+            class="header__nav-detail"
             routerLinkActive="active-link"
             [routerLinkActiveOptions]="{ exact: true }"
         >
-            <a [routerLink]="['/']">Home</a>
+            <a [routerLink]="['/']" aria-current="page">Home</a>
         </li>
-        <li class="header__nav-detail"
+        <li 
+            class="header__nav-detail"
             routerLinkActive="active-link"
         >
             <a [routerLink]="['/starships']">StarShips</a>
