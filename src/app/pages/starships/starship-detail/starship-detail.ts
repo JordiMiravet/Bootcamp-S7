@@ -7,7 +7,7 @@ import { StarshipFilmsComponent } from '../starship-films/starship-films';
 import { StarshipInfoComponent } from '../starship-info/starship-info';
 
 @Component({
-  selector: 'app-starship-detail',
+  selector: 'main[starship-detail]',
   standalone: true,
   imports: [StarshipPilotsComponent, StarshipFilmsComponent, StarshipInfoComponent],
   templateUrl: './starship-detail.html',

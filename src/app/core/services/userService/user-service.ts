@@ -9,7 +9,14 @@ export class UserService {
 
   private auth = inject(Auth);
 
-  isLogged = signal(false);
+  public isLogged = signal(false);
+
+  public errorMessages = {
+    invalidEmail : 'Please enter a valid email',
+    invalidPassword : 'Please enter a password that contains at least 6 characters',
+    invalidCredentials : 'This email or password is invalid',
+    emailAlreadyExists: 'This email already exists'
+  }
 
   constructor() {
     onAuthStateChanged(this.auth, (user: User | null) => {

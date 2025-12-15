@@ -1,10 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/userService/user-service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'section[login]',
+  selector: 'main[login]',
   standalone: true,
   imports: [ ReactiveFormsModule ],
   templateUrl: './login.html',
@@ -13,7 +13,10 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   private userService = inject(UserService);
-  private router = inject(Router)
+  private router = inject(Router);
+
+  public message = this.userService.errorMessages;
+  public errorSubmit: string = '';
 
   formLogin: FormGroup;
 
@@ -32,14 +35,15 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    if( this.formLogin.invalid) return;
+    if( this.formLogin.invalid ) return;
 
     this.userService.login(this.formLogin.value)
       .then(res => {
         this.router.navigate(['/starships']); 
       })
-      .catch(error => {
-         console.error('Error:',error);
+      .catch((error) => {
+        this.errorSubmit = this.message.invalidCredentials;
+        console.error('Error:',error);
       })
   }
 }

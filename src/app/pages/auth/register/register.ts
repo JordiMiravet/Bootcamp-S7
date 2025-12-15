@@ -4,7 +4,7 @@ import { UserService } from '../../../core/services/userService/user-service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'section[register]',
+  selector: 'main[register]',
   standalone: true,
   imports: [ ReactiveFormsModule ],
   templateUrl: './register.html',
@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   private userService = inject(UserService);
   private router = inject(Router);
+
+  public message = this.userService.errorMessages;
+  public errorInfo : string = '';
 
   formRegister: FormGroup;
 
@@ -36,6 +39,7 @@ export class RegisterComponent {
         this.router.navigate(['/starships']); 
       })
       .catch(error => {
+        this.errorInfo = this.message.emailAlreadyExists;
          console.error('Error:',error)
       })
   }

@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-
+/* Form */
 
 .form {
     background-color: var(--color-grey-hard);
@@ -26,7 +26,7 @@
 
 .form__legend {
     font-size: var(--font-size-h1);
-    margin-bottom: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
     font-weight: 700;
     border-bottom: 0.5rem solid var(--color-red-hard);
     padding-bottom: var(--spacing-sm);
@@ -55,12 +55,20 @@
     border-radius: var(--spacing-xs) var(--spacing-xs) 0 0;
     border: 5px solid var(--color-red-hard) !important;
 }
-.form__field-error {
+
+.form__field-error-box{
+    margin-top: var(--spacing-lg);
+    width: var(--width-100p);
+}
+.form__field-error-text {
     background-color: var(--color-red-hard);
     width: var(--width-100p);
     padding: var(--spacing-sm);
     border-radius: 0 0 var(--spacing-xs) var(--spacing-xs);
 }
+
+/* Buttons */
+
 .btn-auth {
     color: var(--color-white);
     background-color: var(--color-red-hard);
@@ -73,19 +81,21 @@
     font-size: var(--font-size-base);
     font-weight: 700;
 
-    transition: 0.25s ease-in-out;
+    transition: 0.20s ease-in-out;
     cursor: pointer;
 }
 .btn-auth:hover {
-    color: var(--color-grey-hard);
-    background-color: var(--color-grey-light);
-    
+    color: var(--color-grey-light);
+    background-color: var(--color-red-hardest);
 }
+
 .btn-auth:disabled {
     background-color: var(--color-grey-light);
     color: var(--color-grey-hard);
     cursor: not-allowed;
 }
+
+/* Media Query */
 
 @media(min-width: 768px) {
  .form {

@@ -1,7 +1,6 @@
 :host {
     height: auto;
     background-color: var(--color-black);
-    margin: 0;
     padding-top: var(--spacing-md);
     display: flex;
     flex-direction: column;
@@ -10,6 +9,7 @@
 /* Authenticators */
 
 .header__auth {
+    margin: 0 auto;
     width: var(--width-95p);
     display: flex;
     justify-content: flex-end;

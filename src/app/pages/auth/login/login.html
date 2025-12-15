@@ -1,5 +1,8 @@
+
 <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="form">
-    <legend class="form__legend"> Login:</legend>
+
+    <legend class="form__legend">Login:</legend>
+
     <fieldset class="form__field">
         <label for="inputLoginEmail">Email</label>
         <input 
@@ -7,10 +10,11 @@
             id="inputLoginEmail" 
             formControlName="email"
             [class.form__input-error]="formLogin.controls['email'].invalid && formLogin.controls['email'].touched">
-        <h4 class="form__field-error" [hidden]="formLogin.controls['email'].valid || !formLogin.controls['email'].touched">
-            Please enter a valid email
+        <h4 class="form__field-error-text" [hidden]="formLogin.controls['email'].valid || !formLogin.controls['email'].touched">
+            {{ message.invalidEmail }}
         </h4>
     </fieldset>
+
     <fieldset class="form__field">
         <label for="inputLoginPassword">Password</label>
         <input 
@@ -19,10 +23,17 @@
             formControlName="password"
             [class.form__input-error]="formLogin.controls['password'].invalid && formLogin.controls['password'].touched"
         >
-        <h4 class="form__field-error" [hidden]="formLogin.controls['password'].valid || !formLogin.controls['password'].touched">
-            Please enter a password that contains at least 6 characters
+        <h4 class="form__field-error-text" [hidden]="formLogin.controls['password'].valid || !formLogin.controls['password'].touched">
+            {{ message.invalidPassword }}
         </h4>
+        
     </fieldset>
-    <button class="btn-auth" type="submit" [disabled]="!formLogin.valid">Login</button>
-</form>
 
+    <button class="btn-auth" type="submit" [disabled]="!formLogin.valid">Login</button>
+
+    @if(errorSubmit){
+        <div class="form__field-error-box">
+            <h4 class="form__field-error-text">{{errorSubmit}}</h4>
+        </div>
+    }
+</form>
