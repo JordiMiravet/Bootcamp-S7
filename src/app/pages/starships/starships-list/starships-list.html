@@ -1,9 +1,11 @@
 
-<ul class="starship__list">
+<ul class="starship__list" aria-label="List of Starships">
     @for(starship of starships.starshipList(); track $index){
-        <li class="starship__detail" [routerLink]="['/starships', starship.id ]">
-            <h2>{{ starship.name }}</h2>
-            <h3>{{ starship.model }}</h3>
+        <li>
+            <a class="starship__detail" [routerLink]="['/starships', starship.id ]">
+                <h2>{{ starship.name }}</h2>
+                <h3>{{ starship.model }}</h3>
+            </a>
         </li>
     }
 </ul>

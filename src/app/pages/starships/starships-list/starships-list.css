@@ -12,6 +12,7 @@
 }
 
 .starship__detail {
+    display: block;
     background-color: var(--color-grey-hard);
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-lg);
