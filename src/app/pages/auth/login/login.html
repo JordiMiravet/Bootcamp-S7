@@ -9,7 +9,8 @@
             type="email" 
             id="inputLoginEmail" 
             formControlName="email"
-            [class.form__input-error]="formLogin.controls['email'].invalid && formLogin.controls['email'].touched">
+            [class.form__input-error]="formLogin.controls['email'].invalid && formLogin.controls['email'].touched"
+        >
         <h4 class="form__field-error-text" [hidden]="formLogin.controls['email'].valid || !formLogin.controls['email'].touched">
             {{ message.invalidEmail }}
         </h4>

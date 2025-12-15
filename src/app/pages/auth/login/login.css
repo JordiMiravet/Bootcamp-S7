@@ -66,6 +66,9 @@
     padding: var(--spacing-sm);
     border-radius: 0 0 var(--spacing-xs) var(--spacing-xs);
 }
+.form__field-error-text:last-of-type {
+    border-radius: var(--spacing-xs);
+}
 
 /* Buttons */
 

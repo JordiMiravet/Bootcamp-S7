@@ -9,7 +9,8 @@
             type="email" 
             id="inputRegisterEmail" 
             formControlName="email"
-            [class.form__input-error]="formRegister.controls['email'].invalid && formRegister.controls['email'].touched">
+            [class.form__input-error]="formRegister.controls['email'].invalid && formRegister.controls['email'].touched"
+        >
         <h4 class="form__field-error-text" [hidden]="formRegister.controls['email'].valid || !formRegister.controls['email'].touched">
             {{ message.invalidEmail }}
         </h4>
@@ -33,7 +34,7 @@
 
     @if(errorInfo){
         <div class="form__field-error-box">
-            <h4 class="form__field-error-text">{{errorInfo}}</h4>
+            <h4 class="form__field-error-text">{{ errorInfo }}</h4>
         </div>
     }
 </form>
