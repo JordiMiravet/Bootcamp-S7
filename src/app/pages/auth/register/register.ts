@@ -15,7 +15,7 @@ export class RegisterComponent {
   private router = inject(Router);
 
   public message = this.userService.errorMessages;
-  public errorInfo : string = '';
+  public errorSubmit : string = '';
 
   formRegister: FormGroup;
 
@@ -39,7 +39,7 @@ export class RegisterComponent {
         this.router.navigate(['/starships']); 
       })
       .catch(error => {
-        this.errorInfo = this.message.emailAlreadyExists;
+        this.errorSubmit = this.message.emailAlreadyExists;
          console.error('Error:',error)
       })
   }

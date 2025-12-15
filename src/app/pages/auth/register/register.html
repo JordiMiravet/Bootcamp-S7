@@ -46,9 +46,9 @@
 
     <button class="btn-auth" type="submit" [disabled]="!formRegister.valid" aria-disabled="{{!formRegister.valid}}">Login</button>
 
-    @if(errorInfo){
+    @if(errorSubmit){
         <div class="form__field-error-box" role="alert">
-            <h4 class="form__field-error-text">{{ errorInfo }}</h4>
+            <h4 class="form__field-error-text">{{ errorSubmit }}</h4>
         </div>
     }
 </form>
