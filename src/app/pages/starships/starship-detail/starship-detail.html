@@ -1,36 +1,39 @@
 <img class="background-image" src="/assets/images/background_deathStar.webp" alt="Starship background">
 
 @if (loading) {
-    <h2 class="status-message">Loading starship...</h2>
+    <h2 class="status-message" role="status">Loading starship...</h2>
 } @else if (starship) {
     <div class="article-title">
-        <h2>STARSHIP</h2>
+        <h2 id="starship-title">STARSHIP</h2>
     </div>
     <article 
         starship-info
         [starship]="starship"
+        aria-labelledby="starship-title"
     ></article>
 
     @if(starship.pilots.length){
         <div class="article-title">
-            <h2>Pilots</h2>
+            <h2 id="pilots-title">Pilots</h2>
         </div>
         <article 
             starship-pilots
             [pilots]="starship.pilots"
+            aria-labelledby="pilots-title"
         ></article>
     }
    
     @if(starship.films.length){
         <div class="article-title">
-            <h2>Films</h2>
+            <h2 id="films-title">Films</h2>
         </div>
         <article
             starship-films
             [films]="starship.films"
+            aria-labelledby="films-title"
         ></article>
     }
 
 } @else {
-    <h2 class="status-message">This Starship doesn't exist</h2>
+    <h2 class="status-message" role="alert">This Starship doesn't exist</h2>
 }

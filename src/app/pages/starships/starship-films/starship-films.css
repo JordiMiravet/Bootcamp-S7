@@ -1,4 +1,4 @@
-:host {
+.films {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
@@ -7,7 +7,7 @@
     width: var(--width-90p);
 }
 
-.films__text{
+.films__item {
     background-color: var(--color-grey-hard);
 
     padding: var(--spacing-md);
@@ -19,17 +19,17 @@
     align-items: center;
     flex-direction: column;
 }
-.films__text h3 {
+.films__item h3 {
     text-align: center;
     margin-bottom: var(--spacing-sm);
 }
-.films__text h3:last-of-type {
+.films__item h3:last-of-type {
     text-align: center;
     margin-bottom: 0;
 }
 
 @media(min-width: 768px) {
-    :host {
+    .films {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }

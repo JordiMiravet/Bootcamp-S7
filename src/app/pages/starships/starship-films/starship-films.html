@@ -1,6 +1,8 @@
-@for(film of films(); track $index){
-    <div class="films__text">
-        <h3>Episode {{ film.episode_id }}</h3>
-        <h3>{{ film.title }}</h3>
-    </div>
-}
+<ul class="films" aria-label="Films">
+    @for(film of films(); track $index){
+        <li class="films__item">
+            <h3>Episode {{ film.episode_id }}</h3>
+            <h3>{{ film.title }}</h3>
+        </li>
+    }
+</ul>

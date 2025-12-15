@@ -1,6 +1,7 @@
-@for(pilot of pilots(); track $index){
-    <div class="pilots__text">
-        <h3>{{ pilot.name }}</h3>
-    </div>
-}
-
+<ul class="pilots" aria-label="Pilots">
+    @for(pilot of pilots(); track $index){
+        <li class="pilots__item">
+            <h3>{{ pilot.name }}</h3>
+        </li>
+    }
+</ul>
