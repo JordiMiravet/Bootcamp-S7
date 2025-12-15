@@ -1,8 +1,9 @@
 :host {
     color: var(--color-grey-light);
+    margin-bottom: var(--spacing-xxl);
 }
 
-.section-text {
+.article-title {
     width: var( --width-90p);
     margin: var(--spacing-xl) auto 0 auto;
     padding: var(--spacing-sm);
@@ -21,7 +22,7 @@
     z-index: -1;
 }
 
-.starship__message {
+.status-message {
     text-align: center;
     color: var(--color-grey-light);
     font-size: var(--font-size-base);

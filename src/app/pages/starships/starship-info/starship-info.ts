@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { StarshipModel } from '../../../models/starship.model';
 
 @Component({
-  selector: 'section[starship-info]',
+  selector: 'article[starship-info]',
   standalone: true,
   imports: [],
   templateUrl: './starship-info.html',
