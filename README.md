@@ -131,9 +131,35 @@ Tras iniciar la aplicación, el usuario puede:
 
 ## Vista Previa del proyecto
 
-1. Aqui tendré que poner los titulos
+1. Registro de usuario
+- El usuario puede registrarse únicamente si el correo no está registrado previamente.
+- En caso de que el email ya exista, se muestra un mensaje de error.
 
-![palabra clave](Aqui tendré que poner las rutas a los gif)
+![register](/public/assets/readme/sw_register.gif)
+
+2. Login de usuario
+- El usuario puede iniciar sesión solo si el correo y la contraseña coinciden.
+- Si los datos son incorrectos, se muestra un mensaje de error.
+
+![login](/public/assets/readme/sw_login.gif)
+
+3. Logout de usuario
+- El usuario puede cerrar sesión.
+- Una vez hecho logout, no podrá acceder a la información protegida de la página.
+
+![logout](assets/readme/sw_logout.gif)
+
+4. Lista de naves:
+- Se carga dinámicamente una lista de naves usando scroll infinito.
+
+![list](assets/readme/sw_list_infinite-scroll.gif)
+
+5. Detalle de una nave especifica
+- Se muestran los detalles de la nave seleccionada de la lista.
+- Mientras se cargan los datos, se muestra un mensaje de carga y, si ocurre un error, aparece un mensaje de error.
+
+![detail](assets/readme/sw_detail.gif)
+
 
 
 ---
