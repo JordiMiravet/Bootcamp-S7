@@ -147,18 +147,18 @@ Tras iniciar la aplicación, el usuario puede:
 - El usuario puede cerrar sesión.
 - Una vez hecho logout, no podrá acceder a la información protegida de la página.
 
-![logout](assets/readme/sw_logout.gif)
+![logout](/public/assets/readme/sw_logout.gif)
 
 4. Lista de naves:
 - Se carga dinámicamente una lista de naves usando scroll infinito.
 
-![list](assets/readme/sw_list_infinite-scroll.gif)
+![list](/public/assets/readme/sw_list_infinite-scroll.gif)
 
 5. Detalle de una nave especifica
 - Se muestran los detalles de la nave seleccionada de la lista.
 - Mientras se cargan los datos, se muestra un mensaje de carga y, si ocurre un error, aparece un mensaje de error.
 
-![detail](assets/readme/sw_detail.gif)
+![detail](/public/assets/readme/sw_detail.gif)
 
 
 
