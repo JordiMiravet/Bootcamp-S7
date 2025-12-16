@@ -133,12 +133,14 @@ Tras iniciar la aplicación, el usuario puede:
 
 1. Registro de usuario
 - El usuario puede registrarse únicamente si el correo no está registrado previamente.
+- Tras registrarse, se redirige automáticamente a la lista de naves.
 - En caso de que el email ya exista, se muestra un mensaje de error.
 
 ![register](/public/assets/readme/sw_register.gif)
 
 2. Login de usuario
 - El usuario puede iniciar sesión solo si el correo y la contraseña coinciden.
+- Tras iniciar sesión, se redirige automáticamente a la lista de naves.
 - Si los datos son incorrectos, se muestra un mensaje de error.
 
 ![login](/public/assets/readme/sw_login.gif)
@@ -159,8 +161,6 @@ Tras iniciar la aplicación, el usuario puede:
 - Mientras se cargan los datos, se muestra un mensaje de carga y, si ocurre un error, aparece un mensaje de error.
 
 ![detail](/public/assets/readme/sw_detail.gif)
-
-
 
 ---
 
