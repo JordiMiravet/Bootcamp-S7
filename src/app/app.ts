@@ -8,6 +8,4 @@ import { HeaderComponent } from './core/header/header';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('Sprint-7');
-}
+export class App {}

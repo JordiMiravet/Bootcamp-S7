@@ -1,18 +1,19 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StarshipsListComponent } from './starships-list';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { StarshipsList } from './starships-list';
-
-describe('StarshipsList', () => {
-  let component: StarshipsList;
-  let fixture: ComponentFixture<StarshipsList>;
+describe('StarshipsListComponent', () => {
+  let component: StarshipsListComponent;
+  let fixture: ComponentFixture<StarshipsListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StarshipsList]
+      imports: [StarshipsListComponent, HttpClientTestingModule]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(StarshipsList);
+    fixture = TestBed.createComponent(StarshipsListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +22,4 @@ describe('StarshipsList', () => {
     expect(component).toBeTruthy();
   });
 });
+

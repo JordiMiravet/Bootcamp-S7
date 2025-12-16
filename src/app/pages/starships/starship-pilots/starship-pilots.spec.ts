@@ -1,19 +1,22 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StarshipPilotsComponent } from './starship-pilots';
+import { InputSignal, signal } from '@angular/core';
+import { Pilot } from '../../../models/starship-pilot.model';
 
-import { StarshipPilots } from './starship-pilots';
-
-describe('StarshipPilots', () => {
-  let component: StarshipPilots;
-  let fixture: ComponentFixture<StarshipPilots>;
+describe('StarshipPilotsComponent', () => {
+  let component: StarshipPilotsComponent;
+  let fixture: ComponentFixture<StarshipPilotsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StarshipPilots]
+      imports: [StarshipPilotsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(StarshipPilots);
+    fixture = TestBed.createComponent(StarshipPilotsComponent);
     component = fixture.componentInstance;
+    component.pilots = signal<Pilot[]>([]) as unknown as InputSignal<Pilot[]>;
     fixture.detectChanges();
   });
 
@@ -21,3 +24,4 @@ describe('StarshipPilots', () => {
     expect(component).toBeTruthy();
   });
 });
+

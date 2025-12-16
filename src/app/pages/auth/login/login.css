@@ -3,8 +3,6 @@
     margin: 0 auto;
 }
 
-/* Form */
-
 .form {
     background-color: var(--color-grey-hard);
     padding: var(--spacing-lg);
@@ -70,8 +68,6 @@
     border-radius: var(--spacing-xs);
 }
 
-/* Buttons */
-
 .btn-auth {
     color: var(--color-white);
     background-color: var(--color-red-hard);
@@ -97,8 +93,6 @@
     color: var(--color-grey-hard);
     cursor: not-allowed;
 }
-
-/* Media Query */
 
 @media(min-width: 768px) {
  .form {

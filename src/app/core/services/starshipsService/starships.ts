@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { StarshipModel } from '../../../models/starship.model';
 import { StarshipApiResponse } from '../../../models/starship-api-response.model';
-import { forkJoin, map, mergeAll, Observable, of, switchMap } from 'rxjs';
+import { forkJoin, map, Observable, of, switchMap } from 'rxjs';
 import { Pilot } from '../../../models/starship-pilot.model';
 import { Film } from '../../../models/starship-film.model';
 
@@ -74,5 +74,4 @@ export class StarshipsService {
       })
     );
   }
-
 }

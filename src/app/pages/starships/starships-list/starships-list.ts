@@ -1,12 +1,11 @@
-import { Component, ElementRef, OnInit, AfterViewInit ,ViewChild, viewChild, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, OnInit, AfterViewInit ,ViewChild, inject } from '@angular/core';
 import { StarshipsService } from '../../../core/services/starshipsService/starships';
 import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'main[starships-list]',
   standalone: true,
-  imports: [RouterLink],
+  imports: [ RouterLink ],
   templateUrl: './starships-list.html',
   styleUrls: ['./starships-list.css'],
 })

@@ -1,9 +1,9 @@
 <div class="header__auth" role="navigation" aria-label="User authentication">
     @if(this.isLogged()){
-        <a [routerLink]="['']" (click)="logOut()" aria-label="Logout">Logout</a>
+        <a [routerLink]="['']" (click)="logOut()" id="logout" aria-label="Logout">Logout</a>
     } @else if (!this.isLogged()) {
-        <a [routerLink]="['/register']" aria-label="Register account">Register</a>
-        <a [routerLink]="['/login']" aria-label="Login account">Login</a>
+        <a [routerLink]="['/register']" id="register" aria-label="Register account">Register</a>
+        <a [routerLink]="['/login']" id="login" aria-label="Login account">Login</a>
     }   
 </div>
 
