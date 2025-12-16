@@ -12,7 +12,11 @@ import { Film } from '../../../models/starship-film.model';
 export class StarshipsService {
   private http = inject(HttpClient)
 
-  private readonly STARSHIPS_URL: string = 'https://swapi.dev/api/starships/';
+  private readonly STARSHIPS_URL: string = 'https://swapi.py4e.com/api/starships/';
+  // Se me ha caido la url de swapi justo cuando estaba haciendo el README
+  // aquí la dejo por si vuelve a funcionar proximamente
+  // https://swapi.dev/api/starships/
+  // De momento usaré la de https://swapi.py4e.com/api/starships/
 
   starshipList = signal<StarshipModel[]>([]);
   nextPage = signal<string | null>(this.STARSHIPS_URL);

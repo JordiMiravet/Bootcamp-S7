@@ -223,9 +223,9 @@ https://github.com/JordiMiravet/Bootcamp-S7.git
 4. Haz un commit siguiendo las Conventional Commits:
 
 ```bash
-    feat: añade nuevo cálculo de presupuesto
-    fix: corrige error en el formulario de usuario
-    docs: actualiza documentación del modal de ayuda
+    feat: añade nueva funcionalidad
+    fix: corrige error
+    docs: actualiza documentación
 ```
 
 5. Envía un Pull Request describiendo tus cambios.
