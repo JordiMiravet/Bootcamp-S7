@@ -1,59 +1,244 @@
-# Sprint7
+# Sprint 7 - StarWars app
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-TS-blue?style=for-the-badge)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-Jasmine-8A4Baf?style=for-the-badge&logo=jasmine&logoColor=white)
 
-## Development server
+## Index
 
-To start a local development server, run:
+- [Descripción de la Aplicación](#descripción-de-la-aplicación)
+- [Tecnologías](#tecnologías)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación del Proyecto](#instalación-del-proyecto)
+- [Uso](#uso)
+- [Vista Previa del Proyecto](#vista-previa-del-proyecto)
+- [Tests](#tests)
+- [Contribución](#Contribución)
+- [GH-Pages](#gh-pages)
+- [Autor](#autor)
+
+---
+
+## Descripción de la Aplicación:
+
+Este proyecto consiste en una aplicación Angular que permite explorar el universo de Star Wars a través de sus naves espaciales. El usuario puede visualizar un listado de naves, consultar información detallada de cada una, ver su listado de pilotos y las películas asociadas, y navegar de forma dinámica entre los distintos apartados.
+
+La aplicación está dividida en componentes, e incorpora gestión de rutas, protección de rutas mediante Guards, consumo de APIs externas, formularios reactivos y validaciones. Además, utiliza paginación para la carga eficiente de datos desde la API de Star Wars.
+
+La funcionalidad se ha construido por niveles:
+- Listado de naves con información básica (nombre, modelo).
+- Ficha detallada de cada nave mostrando todos sus atributos.
+- Visualización de pilotos asociados a cada nave.
+- Visualización de las películas en las que aparece cada nave.
+- Protección de rutas para usuarios registrados.
+- Formularios de registro y login de usuarios, con validaciones y gestión de sesión mediante Firebase.
+
+---
+
+## Tecnologías
+
+- `HTML`
+- `CSS` / `Bootstrap 5`
+- `TypeScript`
+- `Angular 20`
+- Testing con `Jasmine` / `Karma`
+
+---
+
+## Estructura del Proyecto
 
 ```bash
-ng serve
+src/
+ ├─ app/
+ │   ├─ core/
+ │   │   ├─ header/
+ │   │   └─ services/
+ │   │       ├─ starshipsService/
+ │   │       └─ userService/
+ │   ├─ models/
+ │   │   ├─ starship-api-response.model.ts
+ │   │   ├─ starship-film-model.ts
+ │   │   ├─ starship-pilot.model.ts
+ │   │   └─ starship.model.ts
+ │   └─ pages/
+ │       ├─ auth/
+ │       │   ├─ login/
+ │       │   └─ register/
+ │       ├─ home/
+ │       └─ starships/
+ │           ├─ starships-list/
+ │           ├─ starship-detail/
+ │           ├─ starship-info/
+ │           ├─ starship-pilots/
+ │           └─ starship-films/
+ └─ Environments
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Instalación del proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+#### Requisitos previos
+- Antes de instalar el proyecto asegúrate de tener:
+    - Navegador web
+    - node > 22
+    - npm > 10
+    - Angular CLI (instalado globalmente)
+    
+
+1. Clona el repositorio:
 
 ```bash
-ng generate component component-name
+    git clone https://github.com/JordiMiravet/Bootcamp-S7.git
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. Instala dependencias:
 
 ```bash
-ng generate --help
+    npm install
 ```
 
-## Building
-
-To build the project run:
+3. Ejecuta el servidor:
 
 ```bash
-ng build
+    ng serve
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+4. Abrir en el navegador:
 
 ```bash
-ng test
+    http://localhost:4200
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Uso
+
+Tras iniciar la aplicación, el usuario puede:
+
+1. **Registro y login de usuarios**: Los usuarios pueden crear una cuenta y loguearse para acceder al contenido protegido.
+2. **Acceder a la página principal**: Se muestra un listado de naves espaciales con información básica como nombre y modelo.
+3. **Navegación paginada**: Solo se cargan inicialmente las primeras 10 naves, y el usuario puede cargar más mediante el _scroll infinito_.
+4. **Ver detalles de cada nave**: Haciendo clic en cualquier nave del listado, se accede a su ficha completa con todos los atributos disponibles (fabricante, costo, velocidad, tripulación, pasajeros, clase de nave, etc.).
+5. **Explorar pilotos asociados**: Dentro de la ficha de cada nave, se pueden ver tarjetas con los pilotos que la han manejado.
+6. **Consultar películas relacionadas**: Se muestran las películas en las que aparece cada nave.
+7. **Protección de rutas**: El listado de naves y los detalles solo están disponibles para usuarios registrados.
+8. **Navegación dinámica**: El usuario puede volver a la lista de naves o moverse entre secciones mediante la barra de navegación.
+
+---
+
+## Vista Previa del proyecto
+
+1. Aqui tendré que poner los titulos
+
+![palabra clave](Aqui tendré que poner las rutas a los gif)
+
+
+---
+
+## Tests
+
+La aplicación incluye pruebas unitarias con `Jasmine` y se ejecutan mediante `Karma`.  
+
+#### Resumen
+- `32 specs` ejecutadas
+- `0 fallos`
+- Componentes y servicios principales testeados:
+    - Componentes: HeaderComponent, LoginComponent, RegisterComponent, StarshipsListComponent, StarshipInfoComponent, StarshipPilotsComponent, StarshipFilmsComponent, StarshipDetailComponent
+    - Servicios: UserService, StarshipsService
+
+#### Ejemplo destacado
+
+Se verifica que un usuario pueda loguearse correctamente:
+
+```ts
+    it('should call onSubmit and attempt login when form is valid', () => {
+    component.formLogin.setValue({
+        email: 'pleaseStopTesting@gmail.com',
+        password: '123456'
+    })
+    
+    let called = false;
+    (component as any).userService.login = () => {
+        called = true;
+        return Promise.resolve();
+    };
+    
+    component.onSubmit();
+
+    expect(called).toBe(true);
+    });
+```
+
+También se validan formularios reactivos y mensajes de error:
+
+```ts
+    it('should display error messages for invalid email and password', () => {
+    const emailControl = component.formLogin.controls['email'];
+    const passwordControl = component.formLogin.controls['password'];
+
+    emailControl.setValue(''); 
+    emailControl.markAsTouched();
+    passwordControl.setValue('');
+    passwordControl.markAsTouched();
+
+    expect(emailControl.invalid).toBeTrue();
+    expect(passwordControl.invalid).toBeTrue();
+
+    expect(component.message.invalidEmail).toBe('Please enter a valid email');
+    expect(component.message.invalidPassword).toBe('Please enter a password that contains at least 6 characters');
+    });
+```
+#### Ejecutar test
+
+- Para correr todos los tests locales:
 
 ```bash
-ng e2e
+    ng test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Contribución
+ 
+Para colaborar en este proyecto, sigue estos pasos:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Haz un **fork** del repositorio.
+
+```bash
+https://github.com/JordiMiravet/Bootcamp-S7.git
+```
+
+2. Crea una nueva rama para tu funcionalidad o corrección:
+
+```bash
+   git checkout -b feature/nueva-funcionalidad
+
+```
+
+3. Realiza los cambios y asegúrate de que los test pasan correctamente.
+
+4. Haz un commit siguiendo las Conventional Commits:
+
+```bash
+    feat: añade nuevo cálculo de presupuesto
+    fix: corrige error en el formulario de usuario
+    docs: actualiza documentación del modal de ayuda
+```
+
+5. Envía un Pull Request describiendo tus cambios.
+
+---
+
+## GH-Pages
+[Abrir proyecto](https://jordimiravet.github.io/Bootcamp-S7/)
+
+---
+
+## Autor
+
+```bash
+    Jordi Miravet – Bootcamp S7 : StarWars app
+```
